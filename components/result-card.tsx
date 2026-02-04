@@ -3,7 +3,7 @@
 import { cn } from '@/lib/utils';
 import type { PredictionResult, CropType } from '@/lib/types';
 import { getTreatment } from '@/lib/types';
-import { CheckCircle2, AlertTriangle, Leaf, Percent, Pill, RefreshCw } from 'lucide-react';
+import { CheckCircle2, AlertTriangle, Percent, Pill, RefreshCw, Clock, Share2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface ResultCardProps {
@@ -16,6 +16,22 @@ interface ResultCardProps {
 export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardProps) {
   const treatment = getTreatment(result.disease);
   const confidencePercent = Math.round(result.confidence * 100);
+  const timestamp = new Date().toLocaleString();
+
+  const handleShare = async () => {
+    const shareData = {
+      title: 'Crop Disease Detection Result',
+      text: `${crop} Analysis: ${result.disease} (${confidencePercent}% confidence)\n\nTreatment: ${treatment}`,
+    };
+    
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.log('[v0] Share cancelled or failed:', err);
+      }
+    }
+  };
 
   return (
     <div className="flex flex-col gap-4">
@@ -28,11 +44,17 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
         <div className="absolute bottom-4 left-4 right-4">
-          <div className="flex items-center gap-2">
-            <span className="text-lg">
-              {crop === 'Tomato' ? '🍅' : '🥭'}
-            </span>
-            <span className="text-sm font-medium text-white/90">{crop} Analysis</span>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="text-lg">
+                {crop === 'Tomato' ? '🍅' : '🥭'}
+              </span>
+              <span className="text-sm font-medium text-white/90">{crop} Analysis</span>
+            </div>
+            <div className="flex items-center gap-1 rounded-full bg-black/30 px-2 py-1 text-xs text-white/80">
+              <Clock className="h-3 w-3" />
+              <span>Just now</span>
+            </div>
           </div>
         </div>
       </div>
@@ -85,12 +107,19 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
             <Percent className="h-5 w-5 text-primary" />
           </div>
-          <div>
+          <div className="flex-1">
             <h3 className="font-semibold text-foreground">Confidence Level</h3>
             <p className="text-sm text-muted-foreground">AI prediction accuracy</p>
           </div>
+          <span className={cn(
+            'text-2xl font-bold',
+            confidencePercent >= 80 ? 'text-success' : 
+            confidencePercent >= 50 ? 'text-warning' : 'text-destructive'
+          )}>
+            {confidencePercent}%
+          </span>
         </div>
-        <div className="relative h-4 overflow-hidden rounded-full bg-secondary">
+        <div className="relative h-3 overflow-hidden rounded-full bg-secondary">
           <div
             className={cn(
               'h-full rounded-full transition-all duration-1000',
@@ -103,9 +132,11 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
             style={{ width: `${confidencePercent}%` }}
           />
         </div>
-        <p className="mt-2 text-right text-lg font-bold text-foreground">
-          {confidencePercent}%
-        </p>
+        <div className="mt-3 flex justify-between text-xs text-muted-foreground">
+          <span>Low</span>
+          <span>Medium</span>
+          <span>High</span>
+        </div>
       </div>
 
       {/* Treatment */}
@@ -116,7 +147,7 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
           </div>
           <div>
             <h3 className="font-semibold text-foreground">Treatment Recommendation</h3>
-            <p className="text-sm text-muted-foreground">Expert guidance</p>
+            <p className="text-sm text-muted-foreground">Expert guidance for your crop</p>
           </div>
         </div>
         <div className="rounded-2xl bg-secondary/50 p-4">
@@ -126,14 +157,33 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
         </div>
       </div>
 
-      {/* Action Button */}
-      <Button
-        onClick={onScanAgain}
-        className="h-14 rounded-2xl text-base font-semibold shadow-lg shadow-primary/20"
-      >
-        <RefreshCw className="mr-2 h-5 w-5" />
-        Scan Another Leaf
-      </Button>
+      {/* Scan Details */}
+      <div className="glass-card rounded-2xl p-4 shadow-lg">
+        <div className="flex items-center justify-between text-sm">
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <Clock className="h-4 w-4" />
+            <span>Scanned: {timestamp}</span>
+          </div>
+          <button
+            onClick={handleShare}
+            className="flex items-center gap-1 text-primary hover:underline"
+          >
+            <Share2 className="h-4 w-4" />
+            <span>Share</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Action Buttons */}
+      <div className="flex gap-3">
+        <Button
+          onClick={onScanAgain}
+          className="h-14 flex-1 rounded-2xl text-base font-semibold shadow-lg shadow-primary/20"
+        >
+          <RefreshCw className="mr-2 h-5 w-5" />
+          Scan Another Leaf
+        </Button>
+      </div>
     </div>
   );
 }

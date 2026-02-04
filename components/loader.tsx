@@ -42,8 +42,15 @@ export function Loader({ size = 'md', className, text }: LoaderProps) {
 export function FullPageLoader({ text = 'Analyzing your leaf...' }: { text?: string }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm">
-      <div className="glass-card rounded-3xl p-8 shadow-xl">
-        <Loader size="lg" text={text} />
+      <div className="glass-card rounded-3xl p-8 shadow-xl text-center max-w-xs">
+        <Loader size="lg" />
+        <p className="mt-4 text-base font-medium text-foreground">{text}</p>
+        <p className="mt-2 text-xs text-muted-foreground">
+          Our AI is examining the leaf patterns and comparing against known diseases.
+        </p>
+        <p className="mt-3 text-xs text-muted-foreground/70">
+          This may take a moment on first load
+        </p>
       </div>
     </div>
   );

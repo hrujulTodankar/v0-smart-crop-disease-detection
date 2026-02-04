@@ -6,6 +6,7 @@ import { Thermometer, Droplets, Sprout } from 'lucide-react';
 
 interface SensorCardProps {
   sensor: SensorData;
+  isLoading?: boolean;
 }
 
 const iconMap = {
@@ -32,7 +33,7 @@ const colorMap = {
   },
 };
 
-export function SensorCard({ sensor }: SensorCardProps) {
+export function SensorCard({ sensor, isLoading }: SensorCardProps) {
   const Icon = iconMap[sensor.icon];
   const colors = colorMap[sensor.status];
 
@@ -48,47 +49,25 @@ export function SensorCard({ sensor }: SensorCardProps) {
       </div>
       <div className="mt-4">
         <p className="text-sm text-muted-foreground">{sensor.name}</p>
-        <p className="mt-1 text-3xl font-bold text-foreground">
-          {sensor.value}
-          <span className="ml-1 text-lg font-normal text-muted-foreground">{sensor.unit}</span>
-        </p>
+        {isLoading ? (
+          <div className="mt-2 h-9 w-20 animate-pulse rounded-lg bg-muted" />
+        ) : (
+          <p className="mt-1 text-3xl font-bold text-foreground">
+            {sensor.value}
+            <span className="ml-1 text-lg font-normal text-muted-foreground">{sensor.unit}</span>
+          </p>
+        )}
       </div>
     </div>
   );
 }
 
-// Mock sensor data for the sensors screen
-export const mockSensorData: SensorData[] = [
-  {
-    id: '1',
-    name: 'Temperature',
-    value: 28,
-    unit: '°C',
-    icon: 'temperature',
-    status: 'normal',
-  },
-  {
-    id: '2',
-    name: 'Humidity',
-    value: 65,
-    unit: '%',
-    icon: 'humidity',
-    status: 'normal',
-  },
-  {
-    id: '3',
-    name: 'Soil Moisture',
-    value: 42,
-    unit: '%',
-    icon: 'soil',
-    status: 'warning',
-  },
-  {
-    id: '4',
-    name: 'Air Temperature',
-    value: 32,
-    unit: '°C',
-    icon: 'temperature',
-    status: 'warning',
-  },
-];
+// Soil moisture remains mock data as it requires physical IoT sensors
+export const soilMoistureSensor: SensorData = {
+  id: 'soil-1',
+  name: 'Soil Moisture',
+  value: 42,
+  unit: '%',
+  icon: 'soil',
+  status: 'warning',
+};
