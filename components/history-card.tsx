@@ -1,16 +1,16 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import type { ScanHistoryItem } from '@/lib/types';
+import type { ScanHistory, ScanHistoryItem } from '@/lib/types';
 import { CheckCircle2, AlertTriangle, ChevronRight } from 'lucide-react';
 
 interface HistoryCardProps {
-  item: ScanHistoryItem;
+  item: ScanHistory;
   onClick?: () => void;
 }
 
 export function HistoryCard({ item, onClick }: HistoryCardProps) {
-  const formattedDate = new Date(item.timestamp).toLocaleDateString('en-US', {
+  const formattedDate = item.date.toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
     hour: '2-digit',

@@ -8,6 +8,7 @@ import { SensorsScreen } from '@/components/screens/sensors-screen';
 import { HistoryScreen } from '@/components/screens/history-screen';
 import { FullPageLoader } from '@/components/loader';
 import { predictDisease } from '@/lib/api';
+import { saveScanHistory } from '@/lib/history';
 import type { CropType, PredictionResult } from '@/lib/types';
 
 export default function HomePage() {
@@ -40,6 +41,10 @@ export default function HomePage() {
     try {
       const result = await predictDisease(selectedFile, selectedCrop);
       setPredictionResult(result);
+      
+      // Save to history in background (don't await to keep UI responsive)
+      saveScanHistory(selectedCrop, result, selectedImage || undefined);
+      
       setActiveTab('results');
     } catch (err) {
       console.error('[v0] Prediction error:', err);
