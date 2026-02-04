@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
     
-    const file = formData.get('file');
+    const file = formData.get('file') || formData.get('image');
     const crop = formData.get('crop');
 
     if (!file || !(file instanceof File)) {
@@ -17,12 +17,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create new FormData for the backend
-    const backendFormData = new FormData();
-    backendFormData.append('file', file);
-    if (crop) {
-      backendFormData.append('crop', crop.toString());
+    if (!crop) {
+      return NextResponse.json(
+        { error: 'No crop type provided' },
+        { status: 400 }
+      );
     }
+
+    // Create new FormData for the backend - use 'image' as field name
+    const backendFormData = new FormData();
+    backendFormData.append('image', file);
+    backendFormData.append('crop', crop.toString());
 
     // Create abort controller for timeout
     const controller = new AbortController();
