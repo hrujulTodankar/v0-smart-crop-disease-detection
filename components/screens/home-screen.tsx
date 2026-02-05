@@ -35,10 +35,10 @@ export function HomeScreen({
           <Leaf className="h-8 w-8 text-primary-foreground" />
         </div>
         <h1 className="text-2xl font-bold text-foreground">
-          Smart Crop Disease Detection
+          Real-Time IOT Enabled Crop Disease Detection System
         </h1>
         <p className="mt-2 text-muted-foreground">
-          AI-powered diagnosis for healthier crops
+          Real-time smart crop monitoring
         </p>
       </div>
 
