@@ -152,7 +152,7 @@ export function SensorsScreen() {
           // Loading skeletons
           <>
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="glass-card rounded-3xl p-5 shadow-xl">
+              <div key={i} className="glass-card rounded-3m p-5 shadow-xl">
                 <div className="flex items-start justify-between">
                   <div className="h-12 w-12 animate-pulse rounded-2xl bg-muted" />
                   <div className="h-6 w-16 animate-pulse rounded-full bg-muted" />
