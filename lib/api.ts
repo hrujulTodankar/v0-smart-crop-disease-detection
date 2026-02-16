@@ -1,6 +1,6 @@
 import type { CropType, PredictionResult } from './types';
 
-const API_URL = 'https://crop-disease-backend-fdyh.onrender.com/predict';
+const API_URL = '/api/predict';
 
 export async function predictDisease(
   image: File,
@@ -8,7 +8,7 @@ export async function predictDisease(
 ): Promise<PredictionResult> {
   try {
     const formData = new FormData();
-    formData.append('image', image);  // Changed from 'file' to 'image'
+    formData.append('image', image);
     formData.append('crop_type', crop.toLowerCase());
 
     const response = await fetch(API_URL, {
