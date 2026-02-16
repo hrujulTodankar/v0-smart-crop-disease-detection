@@ -9,6 +9,7 @@ export async function predictDisease(
   try {
     const formData = new FormData();
     formData.append('file', image);
+    formData.append('crop_type', crop.toLowerCase());
 
     const response = await fetch(API_URL, {
       method: 'POST',
