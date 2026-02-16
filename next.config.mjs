@@ -6,7 +6,14 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
- 
+  async rewrites() {
+    return [
+      {
+        source: '/api/predict',
+        destination: 'https://crop-disease-backend-fdyh.onrender.com/predict',
+      },
+    ];
+  },
 }
 
 export default nextConfig
