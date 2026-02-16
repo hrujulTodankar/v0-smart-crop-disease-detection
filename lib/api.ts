@@ -6,10 +6,6 @@ export async function predictDisease(
   image: File,
   crop: CropType
 ): Promise<PredictionResult> {
-  if (crop === 'Mango') {
-    throw new Error('Mango disease detection is coming soon. Please select Tomato.');
-  }
-
   try {
     const formData = new FormData();
     formData.append('file', image);
