@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
     const backendUrl = BACKEND_URLS[crop?.toLowerCase() as keyof typeof BACKEND_URLS] || BACKEND_URLS.tomato;
     
     const backendFormData = new FormData();
-    if (file) backendFormData.append('file', file);
+    if (file) backendFormData.append('image', file);
     
     const response = await fetch(backendUrl, {
       method: 'POST',
