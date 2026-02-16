@@ -8,7 +8,7 @@ interface CropSelectorProps {
   onCropChange: (crop: CropType) => void;
 }
 
-const crops: { id: CropType; label: string; emoji: string; color: string; disabled?: boolean }[] = [
+const crops: { id: CropType; label: string; emoji: string; color: string }[] = [
   { id: 'Tomato', label: 'Tomato', emoji: '🍅', color: 'from-red-400 to-red-500' },
   { id: 'Mango', label: 'Mango', emoji: '🥭', color: 'from-amber-400 to-orange-500' },
 ];
