@@ -1,6 +1,9 @@
 import type { CropType, PredictionResult } from './types';
 
-const API_URL = '/api/predict';
+const BACKEND_URLS = {
+  Tomato: 'https://crop-disease-backend-fdyh.onrender.com/predict',
+  Mango: 'https://mango-backend-s6px.onrender.com/predict'
+};
 
 export async function predictDisease(
   image: File,
@@ -9,9 +12,8 @@ export async function predictDisease(
   try {
     const formData = new FormData();
     formData.append('file', image);
-    formData.append('crop_type', crop.toLowerCase());
 
-    const response = await fetch(API_URL, {
+    const response = await fetch(BACKEND_URLS[crop], {
       method: 'POST',
       body: formData,
     });
