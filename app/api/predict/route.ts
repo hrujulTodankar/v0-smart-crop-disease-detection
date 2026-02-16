@@ -8,13 +8,17 @@ const BACKEND_URLS = {
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
-    const crop = formData.get('crop') as string;
+    const crop = (formData.get('crop') as string) || 'tomato';
     const file = formData.get('file');
     
-    const backendUrl = BACKEND_URLS[crop?.toLowerCase() as keyof typeof BACKEND_URLS] || BACKEND_URLS.tomato;
+    if (!file) {
+      return NextResponse.json({ error: 'No file provided' }, { status: 400 });
+    }
+    
+    const backendUrl = BACKEND_URLS[crop.toLowerCase() as keyof typeof BACKEND_URLS] || BACKEND_URLS.tomato;
     
     const backendFormData = new FormData();
-    if (file) backendFormData.append('image', file);
+    backendFormData.append('image', file);
     
     const response = await fetch(backendUrl, {
       method: 'POST',
