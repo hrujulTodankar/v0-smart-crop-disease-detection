@@ -8,10 +8,10 @@ const BACKEND_URLS = {
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
-    const cropType = formData.get('crop_type') as string;
+    const crop = formData.get('crop') as string;
     const file = formData.get('file');
     
-    const backendUrl = BACKEND_URLS[cropType?.toLowerCase() as keyof typeof BACKEND_URLS] || BACKEND_URLS.tomato;
+    const backendUrl = BACKEND_URLS[crop?.toLowerCase() as keyof typeof BACKEND_URLS] || BACKEND_URLS.tomato;
     
     const backendFormData = new FormData();
     if (file) backendFormData.append('file', file);
