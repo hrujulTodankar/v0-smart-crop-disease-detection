@@ -94,7 +94,6 @@ export function UploadCard({ onImageSelect, selectedImage, onClearImage }: Uploa
         ref={fileInputRef}
         type="file"
         accept="image/*"
-        capture="environment"
         onChange={handleInputChange}
         className="hidden"
       />
@@ -120,14 +119,24 @@ export function UploadCard({ onImageSelect, selectedImage, onClearImage }: Uploa
         
         <div className="flex w-full flex-col gap-3 sm:flex-row">
           <Button
-            onClick={() => fileInputRef.current?.click()}
+            onClick={() => {
+              if (fileInputRef.current) {
+                fileInputRef.current.setAttribute('capture', 'environment');
+                fileInputRef.current.click();
+              }
+            }}
             className="flex-1 h-14 rounded-2xl text-base font-semibold shadow-lg shadow-primary/20"
           >
             <Camera className="mr-2 h-5 w-5" />
             Take Photo
           </Button>
           <Button
-            onClick={() => fileInputRef.current?.click()}
+            onClick={() => {
+              if (fileInputRef.current) {
+                fileInputRef.current.removeAttribute('capture');
+                fileInputRef.current.click();
+              }
+            }}
             variant="secondary"
             className="flex-1 h-14 rounded-2xl text-base font-semibold"
           >

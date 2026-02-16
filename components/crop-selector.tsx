@@ -8,9 +8,9 @@ interface CropSelectorProps {
   onCropChange: (crop: CropType) => void;
 }
 
-const crops: { id: CropType; label: string; emoji: string; color: string }[] = [
+const crops: { id: CropType; label: string; emoji: string; color: string; disabled?: boolean }[] = [
   { id: 'Tomato', label: 'Tomato', emoji: '🍅', color: 'from-red-400 to-red-500' },
-  { id: 'Mango', label: 'Mango', emoji: '🥭', color: 'from-amber-400 to-orange-500' },
+  { id: 'Mango', label: 'Mango (Coming Soon)', emoji: '🥭', color: 'from-amber-400 to-orange-500', disabled: true },
 ];
 
 export function CropSelector({ selectedCrop, onCropChange }: CropSelectorProps) {
@@ -23,9 +23,11 @@ export function CropSelector({ selectedCrop, onCropChange }: CropSelectorProps) 
         {crops.map((crop) => (
           <button
             key={crop.id}
-            onClick={() => onCropChange(crop.id)}
+            onClick={() => !crop.disabled && onCropChange(crop.id)}
+            disabled={crop.disabled}
             className={cn(
               'relative flex items-center justify-center gap-3 rounded-2xl p-4 transition-all duration-300',
+              crop.disabled && 'opacity-50 cursor-not-allowed',
               selectedCrop === crop.id
                 ? `bg-gradient-to-r ${crop.color} text-white shadow-lg scale-[1.02]`
                 : 'bg-secondary text-secondary-foreground hover:bg-accent'
