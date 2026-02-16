@@ -65,41 +65,4 @@ export function HistoryCard({ item, onClick }: HistoryCardProps) {
 }
 
 // Mock history data for the history screen
-export const mockHistoryData: ScanHistoryItem[] = [
-  {
-    id: '1',
-    crop: 'Tomato',
-    disease: 'Late Blight',
-    confidence: 0.94,
-    isHealthy: false,
-    imageUrl: 'https://images.unsplash.com/photo-1592841200221-a6898f307baa?w=200&h=200&fit=crop',
-    timestamp: new Date(Date.now() - 1000 * 60 * 30), // 30 mins ago
-  },
-  {
-    id: '2',
-    crop: 'Mango',
-    disease: 'Healthy',
-    confidence: 0.98,
-    isHealthy: true,
-    imageUrl: 'https://images.unsplash.com/photo-1553279768-865429fa0078?w=200&h=200&fit=crop',
-    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 2), // 2 hours ago
-  },
-  {
-    id: '3',
-    crop: 'Tomato',
-    disease: 'Powdery Mildew',
-    confidence: 0.87,
-    isHealthy: false,
-    imageUrl: 'https://images.unsplash.com/photo-1582284540020-8acbe03f4924?w=200&h=200&fit=crop',
-    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 24), // 1 day ago
-  },
-  {
-    id: '4',
-    crop: 'Mango',
-    disease: 'Anthracnose',
-    confidence: 0.91,
-    isHealthy: false,
-    imageUrl: 'https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=200&h=200&fit=crop',
-    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 48), // 2 days ago
-  },
-];
+export const mockHistoryData: ScanHistoryItem[] = [];

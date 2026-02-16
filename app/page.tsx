@@ -8,7 +8,7 @@ import { SensorsScreen } from '@/components/screens/sensors-screen';
 import { HistoryScreen } from '@/components/screens/history-screen';
 import { FullPageLoader } from '@/components/loader';
 import { predictDisease } from '@/lib/api';
-import type { CropType, PredictionResult } from '@/lib/types';
+import type { CropType, PredictionResult, ScanHistoryItem } from '@/lib/types';
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState<TabType>('home');
@@ -17,6 +17,7 @@ export default function HomePage() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [predictionResult, setPredictionResult] = useState<PredictionResult | null>(null);
+  const [scanHistory, setScanHistory] = useState<ScanHistoryItem[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   const handleImageSelect = useCallback((file: File, preview: string) => {
@@ -40,6 +41,19 @@ export default function HomePage() {
     try {
       const result = await predictDisease(selectedFile, selectedCrop);
       setPredictionResult(result);
+      
+      // Add to scan history
+      const historyItem: ScanHistoryItem = {
+        id: Date.now().toString(),
+        crop: selectedCrop,
+        disease: result.prediction === 'healthy' ? 'Healthy' : result.prediction.replace(/_/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()),
+        confidence: result.confidence / 100,
+        isHealthy: result.prediction === 'healthy',
+        imageUrl: selectedImage!,
+        timestamp: new Date(),
+      };
+      setScanHistory(prev => [historyItem, ...prev]);
+      
       setActiveTab('results');
     } catch (err) {
       console.error('[v0] Prediction error:', err);
@@ -89,7 +103,7 @@ export default function HomePage() {
         
         {activeTab === 'sensors' && <SensorsScreen />}
         
-        {activeTab === 'history' && <HistoryScreen />}
+        {activeTab === 'history' && <HistoryScreen history={scanHistory} />}
         
         {/* Error Display */}
         {error && (
