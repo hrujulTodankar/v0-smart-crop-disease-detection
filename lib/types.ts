@@ -1,15 +1,9 @@
 export type CropType = 'Tomato' | 'Mango';
 
 export interface PredictionResult {
+  disease: string;
   confidence: number;
-  precautions: string[];
-  prediction: string;
-  risk: string[];
-  sensor: {
-    humidity: number | null;
-    moisture: number | null;
-    temperature: number | null;
-  };
+  isHealthy: boolean;
 }
 
 export interface ScanHistoryItem {
@@ -57,7 +51,11 @@ export const TREATMENT_MAP: Record<string, string> = {
   'healthy': 'Your plant is healthy! Continue with regular care: proper watering, adequate sunlight, and balanced fertilization.',
 };
 
-export function getTreatment(disease: string): string {
+export function getTreatment(disease: string | undefined): string {
+  if (!disease) {
+    return 'Unable to determine treatment. Please try again.';
+  }
+  
   // Check for exact match first
   if (TREATMENT_MAP[disease]) {
     return TREATMENT_MAP[disease];
