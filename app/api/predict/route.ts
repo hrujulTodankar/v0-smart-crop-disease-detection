@@ -1,12 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const BACKEND_URL = 'https://crop-disease-backend-fdyh.onrender.com/predict';
+const BACKEND_URLS = {
+  tomato: 'https://crop-disease-backend-fdyh.onrender.com/predict',
+  mango: 'https://mango-backend-s6px.onrender.com'
+};
 
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
+    const cropType = formData.get('crop_type') as string;
     
-    const response = await fetch(BACKEND_URL, {
+    const backendUrl = BACKEND_URLS[cropType?.toLowerCase() as keyof typeof BACKEND_URLS] || BACKEND_URLS.tomato;
+    
+    const response = await fetch(backendUrl, {
       method: 'POST',
       body: formData,
     });
