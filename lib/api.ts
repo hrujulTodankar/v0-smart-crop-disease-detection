@@ -21,13 +21,15 @@ export async function predictDisease(
     }
 
     const data = await response.json();
+    console.log('Backend response:', data);
     
     const disease = data.disease || data.prediction || data.class || 'Unknown';
-    const confidence = data.confidence ?? data.probability ?? 0;
-    const isHealthy = data.isHealthy ?? data.is_healthy ?? ((disease && disease.toLowerCase().includes('healthy')) || false);
+    const confidence = typeof data.confidence === 'number' ? data.confidence : (typeof data.probability === 'number' ? data.probability : 0);
+    const isHealthy = data.isHealthy ?? data.is_healthy ?? (disease ? disease.toLowerCase().includes('healthy') : false);
 
     return { disease, confidence, isHealthy };
   } catch (error) {
+    console.error('Prediction error:', error);
     if (error instanceof TypeError && error.message.includes('fetch')) {
       throw new Error('Cannot connect to backend. Please check your internet connection.');
     }
