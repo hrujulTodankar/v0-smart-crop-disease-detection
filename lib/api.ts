@@ -1,6 +1,6 @@
 import type { CropType, PredictionResult } from './types';
 
-const API_URL = '/api/predict';
+const API_URL = 'https://crop-disease-backend-fdyh.onrender.com/predict';
 
 export async function predictDisease(
   image: File,
