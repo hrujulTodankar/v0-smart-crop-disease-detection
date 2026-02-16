@@ -25,7 +25,7 @@ export async function predictDisease(
     const disease = data.disease || data.prediction || data.class || 'Unknown';
     const confidence = data.confidence ?? data.probability ?? 0;
     const isHealthy = data.isHealthy ?? data.is_healthy ?? 
-      disease.toLowerCase().includes('healthy');
+      (disease && disease.toLowerCase().includes('healthy')) || false;
 
     return { disease, confidence, isHealthy };
   } catch (error) {
