@@ -8,12 +8,16 @@ export async function predictDisease(
 ): Promise<PredictionResult> {
   try {
     const formData = new FormData();
-    formData.append('file', image);
+    formData.append('image', image);  // Changed from 'file' to 'image'
     formData.append('crop_type', crop.toLowerCase());
 
     const response = await fetch(API_URL, {
       method: 'POST',
       body: formData,
+      mode: 'cors',
+      headers: {
+        'Accept': 'application/json',
+      },
     });
 
     if (!response.ok) {
@@ -25,8 +29,12 @@ export async function predictDisease(
     
     return data;
   } catch (error) {
+    console.error('API Error:', error);
     if (error instanceof TypeError && error.message.includes('fetch')) {
-      throw new Error('Cannot connect to backend. Please check your internet connection.');
+      throw new Error('Cannot connect to backend. Backend may be starting up or CORS issue.');
+    }
+    if (error instanceof Error && error.message.includes('NetworkError')) {
+      throw new Error('Network error. Please check your internet connection.');
     }
     throw error;
   }
