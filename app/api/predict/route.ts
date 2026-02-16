@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const BACKEND_URLS = {
   tomato: 'https://crop-disease-backend-fdyh.onrender.com/predict',
-  mango: 'https://mango-backend-s6px.onrender.com'
+  mango: 'https://mango-backend-s6px.onrender.com/predict'
 };
 
 export async function POST(request: NextRequest) {
