@@ -38,7 +38,7 @@ export function HomeScreen({
           Smart Crop Disease Detection
         </h1>
         <p className="mt-2 text-muted-foreground">
-          AI-powered diagnosis for healthier crops
+          System diagnosis for healthier crops
         </p>
       </div>
 
@@ -80,7 +80,7 @@ export function HomeScreen({
           {[
             { step: '1', text: 'Select your crop type (Tomato or Mango)' },
             { step: '2', text: 'Upload or capture a clear leaf image' },
-            { step: '3', text: 'Get instant AI-powered disease diagnosis' },
+            { step: '3', text: 'Get instant disease diagnosis Through our System' },
             { step: '4', text: 'Receive treatment recommendations' },
           ].map((item) => (
             <li key={item.step} className="flex items-start gap-3">
