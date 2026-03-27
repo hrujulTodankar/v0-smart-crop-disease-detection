@@ -17,7 +17,7 @@
     "how_it_works": "हे कसे कार्य करते",
     
     "step_1": "तुमच्या पिकाचा प्रकार निवडा (टोमॅटो किंवा आंबा)",
-    "step_2": "पानाचा स्पष्ट फोटो अपलोड करा किंवा काढा",
+    "step_2": "पानाचा स्पष्ट फोटो काढा किंवा अपलोड करा",
     "step_3": "आमच्या सिस्टीमद्वारे त्वरित रोगाचे निदान मिळवा",
     "step_4": "उपचारांच्या शिफारसी प्राप्त करा",
 
@@ -29,6 +29,11 @@
     "Tomato_Early_blight": "लवकर येणारा करपा (Early Blight)",
     "Tomato_healthy": "निरोगी पान",
 
+    "home":"होम",
+    "results": "निकाल",
+    "sensors": "सेन्सर",
+    "history": "इतिहास",
+
     
     "Mango_Anthracnose": "अँथ्रॅकनोज (Anthracnose)",
     "Mango_Bacterial_Canker": "बॅक्टेरियल कॅन्कर",
@@ -38,6 +43,6 @@
     "Mango_Healthy": "निरोगी आंबा पान",
     "Mango_Powdery_Mildew": "भुूरी रोग (Powdery Mildew)",
     "Mango_Sooty_Mould": "काळी बुरशी (Sooty Mould)"
-    
+
   }
 }

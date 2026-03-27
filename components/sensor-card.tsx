@@ -3,6 +3,9 @@
 import { cn } from '@/lib/utils';
 import type { SensorData } from '@/lib/types';
 import { Thermometer, Droplets, Sprout } from 'lucide-react';
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface SensorCardProps {
   sensor: SensorData;

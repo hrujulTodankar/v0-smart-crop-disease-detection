@@ -2,6 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { Home, Leaf, Activity, Clock } from 'lucide-react';
+import { t } from 'i18next';
 
 export type TabType = 'home' | 'results' | 'sensors' | 'history';
 
@@ -12,10 +13,10 @@ interface BottomNavProps {
 }
 
 const tabs = [
-  { id: 'home' as const, label: 'Home', icon: Home },
-  { id: 'results' as const, label: 'Results', icon: Leaf },
-  { id: 'sensors' as const, label: 'Sensors', icon: Activity },
-  { id: 'history' as const, label: 'History', icon: Clock },
+  { id: 'home' as const, labelKey: 'home', icon: Home },
+  { id: 'results' as const, labelKey: 'results', icon: Leaf },
+  { id: 'sensors' as const, labelKey: 'sensors', icon: Activity },
+  { id: 'history' as const, labelKey: 'history', icon: Clock },
 ];
 
 export function BottomNav({ activeTab, onTabChange, hasResults }: BottomNavProps) {
@@ -41,7 +42,7 @@ export function BottomNav({ activeTab, onTabChange, hasResults }: BottomNavProps
               )}
             >
               <Icon className={cn('h-5 w-5', isActive && 'scale-110')} />
-              <span className="text-xs font-medium">{tab.label}</span>
+              <span className="text-xs font-medium">{t(tab.labelKey)}</span>
             </button>
           );
         })}

@@ -20,8 +20,8 @@ export function CropSelector({ selectedCrop, onCropChange }: CropSelectorProps) 
   }, []);
 
     const crops: { id: CropType; labelKey: string; emoji: string; color: string }[] = [
-  { id: 'Tomato', labelKey: "crop_tomato", emoji: '🍅', color: 'from-red-400 to-red-500' },
-  { id: 'Mango', labelKey: 'Mango', emoji: '🥭', color: 'from-amber-400 to-orange-500' },
+  { id: 'Tomato', labelKey: 'crop_tomato', emoji: '🍅', color: 'from-red-400 to-red-500' },
+  { id: 'Mango', labelKey: 'crop_mango', emoji: '🥭', color: 'from-amber-400 to-orange-500' },
 ];
 
   if (!mounted) return <div className="h-32 w-full bg-secondary/20 animate-pulse rounded-3xl" />;
@@ -45,7 +45,7 @@ export function CropSelector({ selectedCrop, onCropChange }: CropSelectorProps) 
             )}
           >
             <span className="text-2xl">{crop.emoji}</span>
-            <span className="font-semibold">{t(crop.label)}</span>
+            <span className="font-semibold">{t(crop.labelKey)}</span>
             {selectedCrop === crop.id && (
               <div className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white text-primary shadow-md">
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
