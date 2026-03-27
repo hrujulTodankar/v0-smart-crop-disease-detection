@@ -31,14 +31,14 @@ export function HomeScreen({
     <div className="flex flex-col gap-6">
       {/* Header */}
       <div className="text-center">
-        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary shadow-lg shadow-primary/30">
-          <Leaf className="h-8 w-8 text-primary-foreground" />
+        <div className='mx-auto mb-4 flex h-16 w-16 items-center justify-center '>
+          <img className='object-contain' src="/logo.png" alt="DRGR" width={50} height={40}/>
         </div>
         <h1 className="text-2xl font-bold text-foreground">
           Smart Crop Disease Detection
         </h1>
         <p className="mt-2 text-muted-foreground">
-          System diagnosis for healthier crops
+          System Diagnosis for Healthier Crops
         </p>
       </div>
 

@@ -12,7 +12,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Smart Crop Disease Detection',
   description: 'AI-powered crop disease detection for modern farmers. Upload a leaf image and get instant diagnosis with treatment recommendations.',
-  generator: 'v0.app',
+  generator: 'hrujul',
   icons: {
     icon: [
       {
