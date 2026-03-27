@@ -7,6 +7,13 @@
     "diagnosis_complete": "निदान पूरा हुआ",
     "disease_detected": "रोग का पता चला:",
     "confidence": "सटीकता (Confidence):",
+
+    "upload_title": "पत्ती की तस्वीर अपलोड करें",
+    "upload_subtitle": "फोटो लें या गैलरी से चुनें",
+    "take_photo": "फोटो लें",
+    "browse_files": "फाइलें ब्राउज़ करें",
+    "supports_formats": "JPG, PNG, HEIC फॉर्मेट का समर्थन करता है",
+
     
     "main_title": "स्मार्ट फसल रोग पहचान",
     "main_subtitle": "स्वस्थ फसलों के लिए सिस्टम निदान",
