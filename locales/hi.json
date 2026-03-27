@@ -1,0 +1,27 @@
+{
+  "translation": {
+    "app_title": "पत्ती रोग विश्लेषक",
+    "upload_instruction": "पत्ती की तस्वीर अपलोड करें",
+    "analyze_button": "विश्लेषण करें",
+    "analyzing": "विश्लेषण हो रहा है...",
+    "diagnosis_complete": "निदान पूरा हुआ",
+    "disease_detected": "रोग का पता चला:",
+    "confidence": "सटीकता (Confidence):",
+    
+    "main_title": "स्मार्ट फसल रोग पहचान",
+    "main_subtitle": "स्वस्थ फसलों के लिए सिस्टम निदान",
+    "how_it_works": "यह कैसे काम करता है",
+    "step_1": "अपनी फसल का प्रकार चुनें (टमाटर या आम)",
+    "step_2": "पत्ती की स्पष्ट तस्वीर अपलोड करें या खींचें",
+    "step_3": "हमारे सिस्टम के माध्यम से तुरंत बीमारी का निदान प्राप्त करें",
+    "step_4": "उपचार के सुझाव प्राप्त करें",
+
+    "select_crop": "अपनी फसल चुनें",
+    "crop_tomato": "टमाटर",
+    "crop_mango": "आम",
+
+    "Tomato_Late_blight": "पछेता झुलसा (Late Blight)",
+    "Tomato_Early_blight": "अगेती झुलसा (Early Blight)",
+    "Tomato_healthy": "स्वस्थ पत्ती"
+  }
+}

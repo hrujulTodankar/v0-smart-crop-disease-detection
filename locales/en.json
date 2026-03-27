@@ -1,0 +1,27 @@
+{
+  "translation": {
+    "app_title": "Leaf Disease Analyzer",
+    "upload_instruction": "Upload a picture of a leaf",
+    "analyze_button": "Analyze Leaf",
+    "analyzing": "Analyzing...",
+    "diagnosis_complete": "Diagnosis Complete",
+    "disease_detected": "Disease Detected:",
+    "confidence": "Confidence:",
+    
+    "main_title": "Smart Crop Disease Detection",
+    "main_subtitle": "System Diagnosis for Healthier Crops",
+    "how_it_works": "How it works",
+    "step_1": "Select your crop type (Tomato or Mango)",
+    "step_2": "Upload or capture a clear leaf image",
+    "step_3": "Get instant disease diagnosis through our System",
+    "step_4": "Receive treatment recommendations",
+
+    "select_crop": "Select Your Crop",
+    "crop_tomato": "Tomato",
+    "crop_mango": "Mango",
+
+    "Tomato_Late_blight": "Late Blight",
+    "Tomato_Early_blight": "Early Blight",
+    "Tomato_healthy": "Healthy Leaf"
+  }
+}

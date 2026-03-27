@@ -1,11 +1,15 @@
 'use client';
 
-import { Leaf, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { UploadCard } from '@/components/upload-card';
 import { CropSelector } from '@/components/crop-selector';
 import { Button } from '@/components/ui/button';
 import { Loader } from '@/components/loader';
 import type { CropType } from '@/lib/types';
+import { useTranslation } from 'react-i18next';
+import { useState , useEffect } from 'react';
+
+
 
 interface HomeScreenProps {
   selectedCrop: CropType;
@@ -27,6 +31,18 @@ export function HomeScreen({
   onAnalyze,
   isAnalyzing,
 }: HomeScreenProps) {
+
+    const { t } = useTranslation();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <div className="flex flex-col gap-6 opacity-0" />; 
+  }
+
   return (
     <div className="flex flex-col gap-6">
       {/* Header */}
@@ -62,12 +78,12 @@ export function HomeScreen({
           {isAnalyzing ? (
             <>
               <Loader size="sm" className="mr-3" />
-              Analyzing...
+              {t('analyzing')}
             </>
           ) : (
             <>
               <Sparkles className="mr-2 h-5 w-5" />
-              Analyze Leaf
+              {t('analyze_button')}
             </>
           )}
         </Button>
@@ -78,10 +94,10 @@ export function HomeScreen({
         <h3 className="mb-3 font-semibold text-foreground">How it works</h3>
         <ul className="space-y-3">
           {[
-            { step: '1', text: 'Select your crop type (Tomato or Mango)' },
-            { step: '2', text: 'Upload or capture a clear leaf image' },
-            { step: '3', text: 'Get instant disease diagnosis Through our System' },
-            { step: '4', text: 'Receive treatment recommendations' },
+            { step: '1', text: t('step_1') },
+            { step: '2', text: t('step_2') },
+            { step: '3', text: t('step_3') },
+            { step: '4', text: t('step_4') },
           ].map((item) => (
             <li key={item.step} className="flex items-start gap-3">
               <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">

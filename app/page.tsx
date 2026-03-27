@@ -9,8 +9,12 @@ import { HistoryScreen } from '@/components/screens/history-screen';
 import { FullPageLoader } from '@/components/loader';
 import { predictDisease } from '@/lib/api';
 import type { CropType, PredictionResult, ScanHistoryItem } from '@/lib/types';
+import { useTranslation } from 'react-i18next';
+import "@/lib/i18n";
 
 export default function HomePage() {
+  const { i18n } = useTranslation();
+
   const [activeTab, setActiveTab] = useState<TabType>('home');
   const [selectedCrop, setSelectedCrop] = useState<CropType>('Tomato');
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -19,6 +23,10 @@ export default function HomePage() {
   const [predictionResult, setPredictionResult] = useState<PredictionResult | null>(null);
   const [scanHistory, setScanHistory] = useState<ScanHistoryItem[]>([]);
   const [error, setError] = useState<string | null>(null);
+
+  const changeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    i18n.changeLanguage(event.target.value);
+  };
 
   const handleImageSelect = useCallback((file: File, preview: string) => {
     setSelectedFile(file);
@@ -79,6 +87,19 @@ export default function HomePage() {
       {isAnalyzing && <FullPageLoader />}
       
       <div className="mx-auto max-w-lg px-4 py-6">
+        {/* GLOBAL LANGUAGE SWITCHER */}
+        <div className="flex justify-end mb-2">
+          <select
+            onChange={changeLanguage}
+            defaultValue={i18n.language}
+            className="bg-white/50 backdrop-blur-md border border-primary/20 text-foreground text-sm rounded-xl focus:ring-primary focus:border-primary block p-2 cursor-pointer outline-none shadow-sm"
+          >
+            <option value="en">English</option>
+            <option value="hi">हिंदी (Hindi)</option>
+            <option value="mr">मराठी (Marathi)</option>
+          </select>
+        </div>
+
         {activeTab === 'home' && (
           <HomeScreen
             selectedCrop={selectedCrop}

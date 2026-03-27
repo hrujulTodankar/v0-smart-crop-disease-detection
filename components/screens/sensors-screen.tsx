@@ -18,7 +18,7 @@ export function SensorsScreen() {
       </div>
 
       {/* Connection Status */}
-      <div className="glass-card rounded-2xl p-4 shadow-lg">
+      {/* <div className="glass-card rounded-2xl p-4 shadow-lg">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-success/10">
@@ -34,7 +34,7 @@ export function SensorsScreen() {
             <span className="text-xs text-muted-foreground">Live</span>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Sensor Grid */}
       <div className="grid grid-cols-2 gap-4">

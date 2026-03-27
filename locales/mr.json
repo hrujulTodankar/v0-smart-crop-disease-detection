@@ -1,0 +1,43 @@
+{
+  "translation": {
+    "app_title": "पानांच्या रोगाचे विश्लेषक",
+    "upload_instruction": "पानाचा फोटो अपलोड करा",
+    "analyze_button": "विश्लेषण करा",
+    "analyzing": "विश्लेषण सुरू आहे...",
+    "diagnosis_complete": "निदान पूर्ण झाले",
+    "disease_detected": "आढळलेला रोग:",
+    "confidence": "खात्री (Confidence):",
+    "upload_title": "पानाचा फोटो अपलोड करा",
+    "upload_subtitle": "फोटो काढा किंवा गॅलरीमधून निवडा",
+    "take_photo": "फोटो काढा",
+    "browse_files": "गैलरी मधे शोधा",
+    "supports_formats": "JPG, PNG, HEIC फॉरमॅटला सपोर्ट करते",
+    
+    
+    "how_it_works": "हे कसे कार्य करते",
+    
+    "step_1": "तुमच्या पिकाचा प्रकार निवडा (टोमॅटो किंवा आंबा)",
+    "step_2": "पानाचा स्पष्ट फोटो अपलोड करा किंवा काढा",
+    "step_3": "आमच्या सिस्टीमद्वारे त्वरित रोगाचे निदान मिळवा",
+    "step_4": "उपचारांच्या शिफारसी प्राप्त करा",
+
+    "select_crop": "तुमचे पीक निवडा",
+    "crop_tomato": "टोमॅटो",
+    "crop_mango": "आंबा",
+
+    "Tomato_Late_blight": "करपा (Late Blight)",
+    "Tomato_Early_blight": "लवकर येणारा करपा (Early Blight)",
+    "Tomato_healthy": "निरोगी पान",
+
+    
+    "Mango_Anthracnose": "अँथ्रॅकनोज (Anthracnose)",
+    "Mango_Bacterial_Canker": "बॅक्टेरियल कॅन्कर",
+    "Mango_Cutting_Weevil": "कटिंग विवील",
+    "Mango_Die_Back": "डाय बॅक",
+    "Mango_Gall_Midge": "गाल मिज",
+    "Mango_Healthy": "निरोगी आंबा पान",
+    "Mango_Powdery_Mildew": "भुूरी रोग (Powdery Mildew)",
+    "Mango_Sooty_Mould": "काळी बुरशी (Sooty Mould)"
+    
+  }
+}

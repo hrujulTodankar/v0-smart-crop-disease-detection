@@ -6,6 +6,7 @@ import { useRef, useState, useCallback } from 'react';
 import { cn } from '@/lib/utils';
 import { Upload, Camera, X, ImageIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { t } from "i18next";
 
 interface UploadCardProps {
   onImageSelect: (file: File, preview: string) => void;
@@ -110,10 +111,10 @@ export function UploadCard({ onImageSelect, selectedImage, onClearImage }: Uploa
         
         <div className="text-center">
           <h3 className="text-lg font-semibold text-foreground">
-            Upload Leaf Image
+            {t('upload_title')}
           </h3>
           <p className="mt-1 text-sm text-muted-foreground">
-            Take a photo or select from gallery
+          {t('upload_subtitle')}
           </p>
         </div>
         
@@ -128,7 +129,7 @@ export function UploadCard({ onImageSelect, selectedImage, onClearImage }: Uploa
             className="flex-1 h-14 rounded-2xl text-base font-semibold shadow-lg shadow-primary/20"
           >
             <Camera className="mr-2 h-5 w-5" />
-            Take Photo
+            {t('take_photo')}
           </Button>
           <Button
             onClick={() => {
@@ -141,12 +142,12 @@ export function UploadCard({ onImageSelect, selectedImage, onClearImage }: Uploa
             className="flex-1 h-14 rounded-2xl text-base font-semibold"
           >
             <Upload className="mr-2 h-5 w-5" />
-            Browse Files
+            {t('browse_files')}
           </Button>
         </div>
         
         <p className="text-xs text-muted-foreground">
-          Supports JPG, PNG, HEIC formats
+          {t('supports_formats')}
         </p>
       </div>
     </div>
