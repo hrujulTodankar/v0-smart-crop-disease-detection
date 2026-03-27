@@ -91,7 +91,7 @@ export function HomeScreen({
 
       {/* Info Section */}
       <div className="glass-card rounded-3xl p-6 shadow-xl">
-        <h3 className="mb-3 font-semibold text-foreground">How it works</h3>
+        <h3 className="mb-3 font-semibold text-foreground">{t('how_it_works')}</h3>
         <ul className="space-y-3">
           {[
             { step: '1', text: t('step_1') },
