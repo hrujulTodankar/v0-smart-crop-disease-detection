@@ -29,7 +29,7 @@ export function CropSelector({ selectedCrop, onCropChange }: CropSelectorProps) 
   return (
    
     <div className="glass-card rounded-3xl p-4 shadow-xl">
-      <label className="mb-3 block text-sm font-medium text-muted-foreground">
+      <label className="mb-3 block text-xl font-medium text-muted-foreground">
         {t('select_crop')}
       </label>
       <div className="grid grid-cols-2 gap-3">
