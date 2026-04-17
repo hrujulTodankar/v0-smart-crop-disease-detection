@@ -3,6 +3,8 @@
 import { cn } from '@/lib/utils';
 import type { ScanHistoryItem } from '@/lib/types';
 import { CheckCircle2, AlertTriangle, ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { useEffect, useState } from 'react';
 
 interface HistoryCardProps {
   item: ScanHistoryItem;
@@ -10,12 +12,22 @@ interface HistoryCardProps {
 }
 
 export function HistoryCard({ item, onClick }: HistoryCardProps) {
+
+  const { t } = useTranslation();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const formattedDate = new Date(item.timestamp).toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
     hour: '2-digit',
     minute: '2-digit',
   });
+
+  if (!mounted) return <div className="h-24 w-full bg-secondary/10 animate-pulse rounded-2xl" />;
 
   return (
     <button
@@ -49,11 +61,11 @@ export function HistoryCard({ item, onClick }: HistoryCardProps) {
               {item.crop === 'Tomato' ? '🍅' : '🥭'}
             </span>
             <h3 className="truncate font-semibold text-foreground">
-              {item.disease}
+              {t(item.disease)}
             </h3>
           </div>
           <p className="mt-1 text-sm text-muted-foreground">
-            {Math.round(item.confidence * 100)}% confidence
+            {Math.round(item.confidence * 100)}% {t('confidence')}
           </p>
           <p className="text-xs text-muted-foreground">{formattedDate}</p>
         </div>

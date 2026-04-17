@@ -33,7 +33,7 @@ export function Loader({ size = 'md', className, text }: LoaderProps) {
         />
       </div>
       {text && (
-        <p className="text-sm text-muted-foreground animate-pulse">{text}</p>
+        <p className="text-sm text-muted-foreground animate-pulse">t{text}</p>
       )}
     </div>
   );

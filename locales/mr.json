@@ -14,6 +14,16 @@
     "supports_formats": "JPG, PNG, HEIC फॉरमॅटला सपोर्ट करते",
     
     "how_it_works": "खालील प्रक्रिया फॉलो करा",
+
+    "Analysis_Result": "विश्लेषण परिणाम",
+    "system_diagnosis_complete": "सिस्टम निदान पूर्ण",
+    "disease detected": "आढळलेला रोग:",
+    "Confidence Level": "खात्री स्तर (Confidence Level):",
+    "System diagnosis complete": "सिस्टम निदान पूर्ण",
+    "prediction accuracy": "अंदाजाची अचूकता (prediction accuracy)",
+
+    "Precautions": "सावधानता",
+    "Recommended actions": "शिफारस केलेले उपाय",
     
     "step_1": "तुमच्या पिकाचा प्रकार निवडा (टोमॅटो किंवा आंबा)",
     "step_2": "पानाचा स्पष्ट फोटो काढा किंवा अपलोड करा",
@@ -24,9 +34,15 @@
     "crop_tomato": "टोमॅटो",
     "crop_mango": "आंबा",
 
-    "Tomato_Late_blight": "करपा (Late Blight)",
-    "Tomato_Early_blight": "लवकर येणारा करपा (Early Blight)",
+    "Late Blight": "करपा (Late Blight)",
+    "Early Blight": "लवकर येणारा करपा (Early Blight)",
     "Tomato_healthy": "निरोगी पान",
+    "Healthy": "निरोगी ",
+    "Tomato_Bacterial_spot": "बॅक्टेरियल स्पॉट",
+    "Tomato_Leaf_Mold": "पानांवर बुरशी (Leaf Mold)",
+    "Tomato_Septoria_leaf_spot": "सेप्टोरिया पानांवर डाग (Septoria Leaf Spot)",
+    "Tomato_Spider_mites": "स्पायडर माइट्स",  
+
 
     "home":"होम",
     "results": "निकाल",

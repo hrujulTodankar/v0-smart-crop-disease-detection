@@ -4,6 +4,7 @@ import type { PredictionResult, CropType } from '@/lib/types';
 import { RefreshCw, CheckCircle2, AlertTriangle, Percent, Shield, Thermometer } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { useTranslation } from 'react-i18next';
 
 interface ResultCardProps {
   result: PredictionResult;
@@ -15,7 +16,9 @@ interface ResultCardProps {
 export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardProps) {
   const isHealthy = result.prediction === 'healthy';
   const disease = isHealthy ? 'Healthy' : result.prediction.replace(/_/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase());
+  
 
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col gap-4">
       {/* Header with Image */}
@@ -53,9 +56,9 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
               'mb-1 inline-block rounded-full px-3 py-1 text-xs font-semibold',
               isHealthy ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
             )}>
-              {isHealthy ? 'Healthy Plant' : 'Disease Detected'}
+              {isHealthy ? t('confidence') : t('Disease Detected')}
             </div>
-            <h2 className="text-xl font-bold text-foreground">{disease}</h2>
+            <h2 className="text-xl font-bold text-foreground">{t(disease)}</h2>
           </div>
         </div>
       </div>
@@ -67,8 +70,8 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
             <Percent className="h-5 w-5 text-blue-500" />
           </div>
           <div>
-            <h3 className="font-semibold text-foreground">Confidence Level</h3>
-            <p className="text-sm text-muted-foreground">AI prediction accuracy</p>
+            <h3 className="font-semibold text-foreground">{t('Confidence Level')}</h3>
+            <p className="text-sm text-muted-foreground">{t('prediction accuracy')}</p>
           </div>
         </div>
         <div className="relative h-4 overflow-hidden rounded-full bg-gray-200">
@@ -90,13 +93,13 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
             <Shield className="h-5 w-5 text-green-500" />
           </div>
           <div>
-            <h3 className="font-semibold text-foreground">Precautions</h3>
-            <p className="text-sm text-muted-foreground">Recommended actions</p>
+            <h3 className="font-semibold text-foreground">{t('Precautions')}</h3>
+            <p className="text-sm text-muted-foreground">{t('Recommended actions')}</p>
           </div>
         </div>
         <div className="space-y-3">
           {result.precautions.map((precaution, index) => (
-            <div key={index} className="flex items-start gap-3 rounded-2xl bg-green-50/50 p-4">
+            <div key={index} className="flex items-start gap-3 rounded-2xl bg-gray-100 p-4">
               <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-500 text-xs font-bold text-white">
                 {index + 1}
               </div>
