@@ -33,13 +33,13 @@ export function Loader({ size = 'md', className, text }: LoaderProps) {
         />
       </div>
       {text && (
-        <p className="text-sm text-muted-foreground animate-pulse">t{text}</p>
+        <p className="text-sm text-muted-foreground animate-pulse">{text}</p>
       )}
     </div>
   );
 }
 
-export function FullPageLoader({ text = 'Analyzing your leaf...' }: { text?: string }) {
+export function FullPageLoader({ text = "Analyzing Your leaf..." }: { text?: string }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm">
       <div className="glass-card rounded-3xl p-8 shadow-xl">

@@ -34,7 +34,7 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
             <span className="text-lg">
               {crop === 'Tomato' ? '🍅' : '🥭'}
             </span>
-            <span className="text-sm font-medium text-white/90">{crop} Analysis</span>
+            <span className="text-sm font-medium text-white/90">{t(crop)} {t('Analysis')}</span>
           </div>
         </div>
       </div>
@@ -116,7 +116,7 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
             <AlertTriangle className="h-5 w-5 text-orange-500" />
           </div>
           <div>
-            <h3 className="font-semibold text-foreground">Risk Assessment</h3>
+            <h3 className="font-semibold text-foreground">{t("Risk Assessment")}</h3>
             <p className="text-sm text-muted-foreground">Potential risks</p>
           </div>
         </div>
@@ -139,7 +139,7 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
             <Thermometer className="h-5 w-5 text-purple-500" />
           </div>
           <div>
-            <h3 className="font-semibold text-foreground">Environmental Data</h3>
+            <h3 className="font-semibold text-foreground">{t("Environmental Data")}</h3>
             <p className="text-sm text-muted-foreground">Sensor readings</p>
           </div>
         </div>
@@ -148,21 +148,21 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
             <div className="text-2xl font-bold text-purple-600">
               {result.sensor.temperature ?? '--'}
             </div>
-            <p className="text-xs text-muted-foreground mt-1">Temperature</p>
+            <p className="text-xs text-muted-foreground mt-1">{t("Temperature")}</p>
             {result.sensor.temperature && <p className="text-xs text-purple-600">°C</p>}
           </div>
           <div className="rounded-2xl bg-blue-50/50 p-4 text-center">
             <div className="text-2xl font-bold text-blue-600">
               {result.sensor.humidity ?? '--'}
             </div>
-            <p className="text-xs text-muted-foreground mt-1">Humidity</p>
+            <p className="text-xs text-muted-foreground mt-1">{t("Humidity")}</p>
             {result.sensor.humidity && <p className="text-xs text-blue-600">%</p>}
           </div>
           <div className="rounded-2xl bg-green-50/50 p-4 text-center">
             <div className="text-2xl font-bold text-green-600">
               {result.sensor.moisture ?? '--'}
             </div>
-            <p className="text-xs text-muted-foreground mt-1">Moisture</p>
+            <p className="text-xs text-muted-foreground mt-1">{t("Soil Moisture")}</p>
             {result.sensor.moisture && <p className="text-xs text-green-600">%</p>}
           </div>
         </div>
@@ -174,7 +174,7 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
         className="h-14 rounded-2xl text-base font-semibold shadow-lg shadow-primary/20"
       >
         <RefreshCw className="mr-2 h-5 w-5" />
-        Scan Another Leaf
+        {t("Scan Another Leaf")}
       </Button>
     </div>
   );

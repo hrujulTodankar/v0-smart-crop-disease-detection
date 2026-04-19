@@ -14,16 +14,19 @@
     "supports_formats": "JPG, PNG, HEIC फॉरमॅटला सपोर्ट करते",
     
     "how_it_works": "खालील प्रक्रिया फॉलो करा",
+    "Tomato": "टोमॅटो",
+    "Mango": "आंबा",
 
     "Analysis_Result": "विश्लेषण परिणाम",
     "system_diagnosis_complete": "सिस्टम निदान पूर्ण",
-    "disease detected": "आढळलेला रोग:",
+    "Disease Detected": "आढळलेला रोग:",
     "Confidence Level": "खात्री स्तर (Confidence Level):",
     "System diagnosis complete": "सिस्टम निदान पूर्ण",
     "prediction accuracy": "अंदाजाची अचूकता (prediction accuracy)",
 
     "Precautions": "सावधानता",
     "Recommended actions": "शिफारस केलेले उपाय",
+    "Analysis": "विश्लेषण",
     
     "step_1": "तुमच्या पिकाचा प्रकार निवडा (टोमॅटो किंवा आंबा)",
     "step_2": "पानाचा स्पष्ट फोटो काढा किंवा अपलोड करा",
@@ -46,9 +49,24 @@
 
     "home":"होम",
     "results": "निकाल",
-    "sensors": "सेन्सर",
+    "Sensors": "सेन्सर",
     "history": "इतिहास",
 
+    
+    "Risk Assessment": "जोखमीचे मूल्यांकन",
+    "Scan Another Leaf": "दुसरे पान स्कॅन करा",
+    "Environmental Data": "पर्यावरणीय डेटा",
+
+    "sensors_title": "सेन्सर्स माहिती",
+    "sensors_disconnected": "सेन्सर कनेक्टेड नाहीत",
+    "sensors_check_connection": "कृपया तुमचे सेन्सर तपासा आणि पुन्हा प्रयत्न करा.",
+    "retry": "पुन्हा प्रयत्न करा",
+    "normal": "सामान्य",
+    "warning": "सावधानता",
+    "critical": "धोका",
+    "Temperature": "तापमान",
+    "Humidity": "आर्द्रता",
+    "Soil Moisture": "जमिनीतील ओलावा",
     
     "Mango_Anthracnose": "अँथ्रॅकनोज (Anthracnose)",
     "Mango_Bacterial_Canker": "बॅक्टेरियल कॅन्कर",
