@@ -122,7 +122,9 @@ export default function HomePage() {
           />
         )}
         
-        {activeTab === 'sensors' && <SensorsScreen />}
+        {activeTab === 'sensors' && (
+        <SensorsScreen sensors={predictionResult?.sensors || null} />
+        )}
         
         {activeTab === 'history' && <HistoryScreen history={scanHistory} />}
         

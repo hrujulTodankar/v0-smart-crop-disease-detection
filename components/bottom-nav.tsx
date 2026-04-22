@@ -13,10 +13,10 @@ interface BottomNavProps {
 }
 
 const tabs = [
-  { id: 'home' as const, labelKey: 'home', icon: Home },
-  { id: 'results' as const, labelKey: 'results', icon: Leaf },
-  { id: 'sensors' as const, labelKey: 'sensors', icon: Activity },
-  { id: 'history' as const, labelKey: 'history', icon: Clock },
+  { id: 'home' as const, labelKey: 'Home', icon: Home },
+  { id: 'results' as const, labelKey: 'Results', icon: Leaf },
+  { id: 'sensors' as const, labelKey: 'Sensors', icon: Activity },
+  { id: 'history' as const, labelKey: 'History', icon: Clock },
 ];
 
 export function BottomNav({ activeTab, onTabChange, hasResults }: BottomNavProps) {

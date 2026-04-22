@@ -25,6 +25,10 @@
     "crop_tomato": "Tomato",
     "crop_mango": "Mango",
 
+    "sensors_title": "Sensor Information",
+    "sensors_disconnected": "Sensors not connected",
+    "sensors_check_connection":"Check your sensors and try again.",
+
     "Tomato_Late_blight": "Late Blight",
     "Tomato_Early_blight": "Early Blight",
     "Tomato_healthy": "Healthy Leaf"

@@ -4,6 +4,7 @@ export interface PredictionResult {
   disease: string;
   confidence: number;
   isHealthy: boolean;
+  sensors?: SensorData[];
 }
 
 export interface ScanHistoryItem {
