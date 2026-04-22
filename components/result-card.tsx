@@ -104,7 +104,7 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
               <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-500 text-xs font-bold text-white">
                 {index + 1}
               </div>
-              <p className="text-sm leading-relaxed text-foreground">{precaution}</p>
+              <p className="text-sm leading-relaxed text-foreground">{t(precaution)}</p>
             </div>
           ))}
         </div>
@@ -127,7 +127,7 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
               <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-orange-500 text-xs font-bold text-white">
                 ⚠
               </div>
-              <p className="text-sm leading-relaxed text-foreground">{riskItem}</p>
+              <p className="text-sm leading-relaxed text-foreground">{t(riskItem)}</p>
             </div>
           ))}
         </div>

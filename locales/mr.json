@@ -71,6 +71,56 @@
     "Fertilizers": "खत",
     "Pesticides": "कीटनाशक",
     "Suggested fertilizers and pesticides": "सुचवलेलं खत आणि कीटकनाशके",
+
+
+    "Crop is healthy": "पीक निरोगी आहे",
+    "Regular monitoring recommended": "पिकाची नियमित तपासणी करण्याची शिफारस आहे",
+    "Monitor crop regularly": "पिकावर नियमित लक्ष ठेवा",
+    
+    "Remove infected leaves": "संक्रमित पाने काढून टाका",
+    "Remove infected plant debris": "संक्रमित रोपांचे अवशेष काढून टाका",
+    "Remove infected plants": "संक्रमित रोपे काढून टाका",
+    "Remove infected plants immediately": "संक्रमित रोपे त्वरित नष्ट करा",
+    
+    "Maintain proper plant spacing": "रोपांमध्ये योग्य अंतर ठेवा",
+    "Maintain proper spacing between plants": "दोन रोपांमध्ये योग्य अंतर ठेवा",
+    "Maintain plant spacing": "रोपांमधील अंतर राखा",
+    "Maintain proper spacing": "योग्य अंतर ठेवा",
+    
+    "Avoid overhead irrigation": "वरच्या बाजूने पाणी देणे (Overhead irrigation) टाळा",
+    "Avoid overhead watering": "वरच्या बाजूने पाणी घालणे टाळा",
+    "Maintain proper irrigation": "योग्य सिंचन (पाणी) व्यवस्थापन करा",
+    "Improve drainage": "पाण्याचा निचरा सुधारा",
+    
+    "Ensure good air circulation": "हवेची चांगली खेळती व्यवस्था असावी",
+    "Increase air circulation": "हवा खेळती राहू द्या",
+    "Improve air circulation": "हवेचा प्रवाह सुधारा",
+    
+    "Avoid wetting leaves": "पाने ओली करणे टाळा",
+    "Avoid wet leaves": "पाने ओली होऊ देऊ नका",
+    "Spray water on leaves": "पानांवर पाण्याची फवारणी करा",
+    "Reduce humidity": "आर्द्रता (ओलावा) कमी करा",
+    
+    "Maintain field hygiene": "शेतात स्वच्छता राखा",
+    "Keep field clean": "शेत स्वच्छ ठेवा",
+    "Practice crop rotation": "पिकांची फेरपालट करा",
+    
+    "Ensure balanced nutrition": "संतुलित पोषण (खत) निश्चित करा",
+    "Use certified seeds": "प्रमाणित बियाणे वापरा",
+    "Use resistant varieties": "रोगप्रतिकारक वाणांचा (बियाण्यांचा) वापर करा",
+    
+    "Control insect vectors": "रोगराई पसरवणाऱ्या कीटकांवर नियंत्रण ठेवा",
+    "Control whiteflies": "पांढऱ्या माशीवर (Whiteflies) नियंत्रण ठेवा",
+    
+    "Reduce plant stress": "रोपांवरील ताण कमी करा",
+    "Avoid excessive heat conditions": "अति उष्णतेची परिस्थिती टाळा",
+
+    "Sensor data not available": "सेन्सर्सची माहिती उपलब्ध नाही",
+    "Favorable conditions for Late Blight": "करपा (Late Blight) रोगासाठी अनुकूल परिस्थिती",
+    "Possible Early Blight risk": "अगेती करपा (Early Blight) रोगाचा संभाव्य धोका",
+    "Conditions favorable for Leaf Mold": "पानांवरील बुरशीसाठी (Leaf Mold) अनुकूल परिस्थिती",
+    "Possible Spider Mites risk": "लाल कोळी (Spider Mites) चा संभाव्य धोका",
+    "No major disease-favorable conditions detected": "रोगाला पोषक अशी कोणतीही मोठी परिस्थिती आढळली नाही",
     
     "Mango_Anthracnose": "अँथ्रॅकनोज (Anthracnose)",
     "Mango_Bacterial_Canker": "बॅक्टेरियल कॅन्कर",
