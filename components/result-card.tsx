@@ -142,48 +142,57 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
             </div>
             <div>
               <h3 className="font-semibold text-foreground">{t("Recommended Treatment")}</h3>
-              <p className="text-sm text-muted-foreground">{t("Suggested fertilizers and pesticides")}</p>
+              <p className="text-sm text-muted-foreground">{t("Fertilizers and Pesticides")}</p>
             </div>
           </div>
 
-          <div className="space-y-5">
-            {/* Fertilizers List */}
+          {/* THE FIX: We make this wrapper a 2-column grid so they sit side-by-side */}
+          <div className="grid grid-cols-2 gap-4 items-start">
+            
+            {/* Fertilizers Column */}
             {result.treatment.fertilizer && result.treatment.fertilizer.length > 0 && (
-              <div>
+              <div className="w-full">
                 <h4 className="text-sm font-semibold text-foreground mb-3">{t("Fertilizers")}</h4>
-                <div className="space-y-3">
+                <div className="flex flex-col gap-4">
                   {result.treatment.fertilizer.map((item, index) => (
-                    <div key={`fert-${index}`} className="flex items-center gap-4 rounded-2xl bg-teal-50/30 p-3 border border-teal-100">
+                    <div 
+                      key={`fert-${index}`} 
+                      className="flex flex-col items-center text-center gap-3 rounded-2xl bg-teal-50/30 p-3 border border-teal-100 transition-all hover:-translate-y-1 hover:shadow-md"
+                    >
                       <img 
                         src={item.image} 
                         alt={item.name} 
-                        className="h-30 w-30 rounded-xl object-cover bg-white shadow-sm" 
+                        className="h-28 w-full rounded-xl object-cover bg-white shadow-sm" 
                       />
-                      <p className="text-sm font-medium text-foreground">{item.name}</p>
+                      <p className="text-xs font-medium text-foreground line-clamp-3">{item.name}</p>
                     </div>
                   ))}
                 </div>
               </div>
             )}
 
-            {/* Pesticides List */}
+            {/* Pesticides Column */}
             {result.treatment.pesticide && result.treatment.pesticide.length > 0 && (
-              <div>
+              <div className="w-full">
                 <h4 className="text-sm font-semibold text-foreground mb-3">{t("Pesticides")}</h4>
-                <div className="space-y-3">
+                <div className="flex flex-col gap-4">
                   {result.treatment.pesticide.map((item, index) => (
-                    <div key={`pest-${index}`} className="flex items-center gap-4 rounded-2xl bg-teal-50/30 p-3 border border-teal-100">
+                    <div 
+                      key={`pest-${index}`} 
+                      className="flex flex-col items-center text-center gap-3 rounded-2xl bg-teal-50/30 p-3 border border-teal-100 transition-all hover:-translate-y-1 hover:shadow-md"
+                    >
                       <img 
                         src={item.image} 
                         alt={item.name} 
-                        className="h-30 w-30 rounded-xl object-cover bg-white shadow-sm" 
+                        className="h-28 w-full rounded-xl object-cover bg-white shadow-sm" 
                       />
-                      <p className="text-sm font-medium text-foreground">{item.name}</p>
+                      <p className="text-xs font-medium text-foreground line-clamp-3">{item.name}</p>
                     </div>
                   ))}
                 </div>
               </div>
             )}
+
           </div>
         </div>
       )}
