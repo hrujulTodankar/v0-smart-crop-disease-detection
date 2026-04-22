@@ -1,10 +1,19 @@
 export type CropType = 'Tomato' | 'Mango';
 
 export interface PredictionResult {
-  disease: string;
+  prediction: string;
   confidence: number;
-  isHealthy: boolean;
-  sensors?: SensorData[];
+  precautions: string[];
+  risk: string[];
+  sensor: {
+    temperature: number | null;
+    humidity: number | null;
+    moisture: number | null;
+  };
+  treatment?: {
+    fertilizer?: { name: string; image: string }[];
+    pesticide?: { name: string; image: string }[];
+}
 }
 
 export interface ScanHistoryItem {

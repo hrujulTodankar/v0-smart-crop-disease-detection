@@ -1,7 +1,8 @@
 'use client';
 
 import type { PredictionResult, CropType } from '@/lib/types';
-import { RefreshCw, CheckCircle2, AlertTriangle, Percent, Shield, Thermometer } from 'lucide-react';
+// Added Droplets for the new Treatment icon
+import { RefreshCw, CheckCircle2, AlertTriangle, Percent, Shield, Thermometer, Droplets } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
@@ -17,8 +18,8 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
   const isHealthy = result.prediction === 'healthy';
   const disease = isHealthy ? 'Healthy' : result.prediction.replace(/_/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase());
   
-
   const { t } = useTranslation();
+  
   return (
     <div className="flex flex-col gap-4">
       {/* Header with Image */}
@@ -117,7 +118,7 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
           </div>
           <div>
             <h3 className="font-semibold text-foreground">{t("Risk Assessment")}</h3>
-            <p className="text-sm text-muted-foreground">Potential risks</p>
+            <p className="text-sm text-muted-foreground">{t("Potential risks")}</p>
           </div>
         </div>
         <div className="space-y-3">
@@ -132,6 +133,61 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
         </div>
       </div>
 
+      {/* 🆕 RECOMMENDED TREATMENTS SECTION 🆕 */}
+      {result.treatment && (
+        <div className="glass-card rounded-3xl p-6 shadow-xl">
+          <div className="mb-4 flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-500/10">
+              <Droplets className="h-5 w-5 text-teal-500" />
+            </div>
+            <div>
+              <h3 className="font-semibold text-foreground">{t("Recommended Treatment")}</h3>
+              <p className="text-sm text-muted-foreground">{t("Suggested fertilizers and pesticides")}</p>
+            </div>
+          </div>
+
+          <div className="space-y-5">
+            {/* Fertilizers List */}
+            {result.treatment.fertilizer && result.treatment.fertilizer.length > 0 && (
+              <div>
+                <h4 className="text-sm font-semibold text-foreground mb-3">{t("Fertilizers")}</h4>
+                <div className="space-y-3">
+                  {result.treatment.fertilizer.map((item, index) => (
+                    <div key={`fert-${index}`} className="flex items-center gap-4 rounded-2xl bg-teal-50/30 p-3 border border-teal-100">
+                      <img 
+                        src={item.image} 
+                        alt={item.name} 
+                        className="h-30 w-30 rounded-xl object-cover bg-white shadow-sm" 
+                      />
+                      <p className="text-sm font-medium text-foreground">{item.name}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Pesticides List */}
+            {result.treatment.pesticide && result.treatment.pesticide.length > 0 && (
+              <div>
+                <h4 className="text-sm font-semibold text-foreground mb-3">{t("Pesticides")}</h4>
+                <div className="space-y-3">
+                  {result.treatment.pesticide.map((item, index) => (
+                    <div key={`pest-${index}`} className="flex items-center gap-4 rounded-2xl bg-teal-50/30 p-3 border border-teal-100">
+                      <img 
+                        src={item.image} 
+                        alt={item.name} 
+                        className="h-30 w-30 rounded-xl object-cover bg-white shadow-sm" 
+                      />
+                      <p className="text-sm font-medium text-foreground">{item.name}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* Sensor Data */}
       <div className="glass-card rounded-3xl p-6 shadow-xl">
         <div className="mb-4 flex items-center gap-3">
@@ -140,7 +196,7 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
           </div>
           <div>
             <h3 className="font-semibold text-foreground">{t("Environmental Data")}</h3>
-            <p className="text-sm text-muted-foreground">Sensor readings</p>
+            <p className="text-sm text-muted-foreground">{t("Sensor readings")}</p>
           </div>
         </div>
         <div className="grid grid-cols-3 gap-4">
@@ -178,4 +234,4 @@ export function ResultCard({ result, crop, imageUrl, onScanAgain }: ResultCardPr
       </Button>
     </div>
   );
-};
+}

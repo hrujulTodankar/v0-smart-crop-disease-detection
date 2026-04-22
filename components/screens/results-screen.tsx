@@ -20,7 +20,7 @@ export function ResultsScreen({ result, crop, imageUrl, onScanAgain }: ResultsSc
       <div className="text-center">
         <h1 className="text-2xl font-bold text-foreground">{t('Analysis_Result')}</h1>
         <p className="mt-1 text-muted-foreground">
-          System diagnosis complete
+          {t("System diagnosis complete")}
         </p>
       </div>
       

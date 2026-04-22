@@ -67,6 +67,10 @@
     "Temperature": "तापमान",
     "Humidity": "आर्द्रता",
     "Soil Moisture": "जमिनीतील ओलावा",
+    "Recommended Treatment": "शिफारस केलेले उपचार",
+    "Fertilizers": "खत",
+    "Pesticides": "कीटनाशक",
+    "Suggested fertilizers and pesticides": "सुचवलेलं खत आणि कीटकनाशके",
     
     "Mango_Anthracnose": "अँथ्रॅकनोज (Anthracnose)",
     "Mango_Bacterial_Canker": "बॅक्टेरियल कॅन्कर",

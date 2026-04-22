@@ -25,6 +25,13 @@
     "crop_tomato": "Tomato",
     "crop_mango": "Mango",
 
+    "Analysis_Result": "Analysis Result",
+    "system_diagnosis_complete": "System Diagnosis Complete",
+    "Recommended Treatment": "Recommended Treatment",
+    "Fertilizers and Pesticides": "Fertilizers and Pesticides",
+    "Fertilizers": "Fertilizers",
+    "Pesticides": "Pesticides",
+    "Potential risks": "Potential risks",
     "sensors_title": "Sensor Information",
     "sensors_disconnected": "Sensors not connected",
     "sensors_check_connection":"Check your sensors and try again.",
