@@ -1,34 +1,131 @@
 {
   "translation": {
     "app_title": "पत्ती रोग विश्लेषक",
-    "upload_instruction": "पत्ती की तस्वीर अपलोड करें",
+    "upload_instruction": "पत्ती की फोटो अपलोड करें",
     "analyze_button": "विश्लेषण करें",
     "analyzing": "विश्लेषण हो रहा है...",
     "diagnosis_complete": "निदान पूरा हुआ",
-    "disease_detected": "रोग का पता चला:",
+    "disease_detected": "पाया गया रोग:",
     "confidence": "सटीकता (Confidence):",
-
-    "upload_title": "पत्ती की तस्वीर अपलोड करें",
-    "upload_subtitle": "फोटो लें या गैलरी से चुनें",
-    "take_photo": "फोटो लें",
-    "browse_files": "फाइलें ब्राउज़ करें",
-    "supports_formats": "JPG, PNG, HEIC फॉर्मेट का समर्थन करता है",
-
+    "upload_title": "पत्ती की फोटो अपलोड करें",
+    "upload_subtitle": "फोटो खींचें या गैलरी से चुनें",
+    "take_photo": "फोटो खींचें",
+    "browse_files": "गैलरी से चुनें",
+    "supports_formats": "JPG, PNG, HEIC फॉर्मेट सपोर्ट करता है",
     
-    "main_title": "स्मार्ट फसल रोग पहचान",
-    "main_subtitle": "स्वस्थ फसलों के लिए सिस्टम निदान",
-    "how_it_works": "इन तरीकों को अपनाएँ",
+    "how_it_works": "यह कैसे काम करता है",
+    "Tomato": "टमाटर",
+    "Mango": "आम",
+
+    "Analysis_Result": "विश्लेषण परिणाम",
+    "system_diagnosis_complete": "सिस्टम निदान पूरा हुआ",
+    "Disease Detected": "पाया गया रोग:",
+    "Confidence Level": "सटीकता स्तर (Confidence Level):",
+    "System diagnosis complete": "सिस्टम निदान पूरा हुआ",
+    "prediction accuracy": "अनुमान की सटीकता (Prediction accuracy)",
+
+    "Precautions": "सावधानियां",
+    "Recommended actions": "अनुशंसित उपाय",
+    "Analysis": "विश्लेषण",
+    
     "step_1": "अपनी फसल का प्रकार चुनें (टमाटर या आम)",
-    "step_2": "पत्ती की स्पष्ट तस्वीर खींचें या अपलोड करें",
-    "step_3": "हमारे सिस्टम के माध्यम से तुरंत बीमारी का निदान प्राप्त करें",
-    "step_4": "उपचार के सुझाव प्राप्त करें",
+    "step_2": "पत्ती की साफ फोटो खींचें या अपलोड करें",
+    "step_3": "हमारे सिस्टम से तुरंत रोग का निदान प्राप्त करें",
+    "step_4": "उपचार की सिफारिशें प्राप्त करें",
 
     "select_crop": "अपनी फसल चुनें",
     "crop_tomato": "टमाटर",
     "crop_mango": "आम",
 
-    "Tomato_Late_blight": "पछेता झुलसा (Late Blight)",
-    "Tomato_Early_blight": "अगेती झुलसा (Early Blight)",
-    "Tomato_healthy": "स्वस्थ पत्ती"
+    "Late Blight": "पछेती झुलसा (Late Blight)",
+    "Early Blight": "अगेती झुलसा (Early Blight)",
+    "Tomato_healthy": "स्वस्थ पत्ती",
+    "Healthy": "स्वस्थ ",
+    "Tomato_Bacterial_spot": "बैक्टीरियल स्पॉट",
+    "Tomato_Leaf_Mold": "पत्ती की फफूंदी (Leaf Mold)",
+    "Tomato_Septoria_leaf_spot": "सेप्टोरिया लीफ स्पॉट (Septoria Leaf Spot)",
+    "Tomato_Spider_mites": "स्पाइडर माइट्स",  
+
+    "Home": "होम",
+    "Results": "परिणाम",
+    "Sensors": "सेंसर",
+    "History": "इतिहास",
+
+    "Risk Assessment": "जोखिम मूल्यांकन",
+    "Scan Another Leaf": "दूसरी पत्ती स्कैन करें",
+    "Environmental Data": "पर्यावरणीय डेटा",
+
+    "sensors_title": "सेंसर की जानकारी",
+    "sensors_disconnected": "सेंसर कनेक्ट नहीं हैं",
+    "sensors_check_connection": "कृपया अपने सेंसर की जांच करें और पुनः प्रयास करें।",
+    "retry": "पुनः प्रयास करें",
+    "normal": "सामान्य",
+    "warning": "चेतावनी",
+    "critical": "गंभीर",
+    "Temperature": "तापमान",
+    "Humidity": "नमी (Humidity)",
+    "Soil Moisture": "मिट्टी की नमी",
+    "Recommended Treatment": "अनुशंसित उपचार",
+    "Fertilizers": "खाद (उर्वरक)",
+    "Pesticides": "कीटनाशक",
+    "Suggested fertilizers and pesticides": "सुझाए गए खाद और कीटनाशक",
+
+    "Crop is healthy": "फसल स्वस्थ है",
+    "Regular monitoring recommended": "नियमित निगरानी की सिफारिश की जाती है",
+    "Monitor crop regularly": "फसल की नियमित निगरानी करें",
+    
+    "Remove infected leaves": "संक्रमित पत्तियों को हटा दें",
+    "Remove infected plant debris": "संक्रमित पौधे के अवशेषों को हटा दें",
+    "Remove infected plants": "संक्रमित पौधों को हटा दें",
+    "Remove infected plants immediately": "संक्रमित पौधों को तुरंत नष्ट कर दें",
+    
+    "Maintain proper plant spacing": "पौधों के बीच उचित दूरी बनाए रखें",
+    "Maintain proper spacing between plants": "दो पौधों के बीच उचित दूरी बनाए रखें",
+    "Maintain plant spacing": "पौधों की दूरी बनाए रखें",
+    "Maintain proper spacing": "उचित दूरी बनाए रखें",
+    
+    "Avoid overhead irrigation": "ऊपर से सिंचाई (Overhead irrigation) से बचें",
+    "Avoid overhead watering": "ऊपर से पानी देने से बचें",
+    "Maintain proper irrigation": "उचित सिंचाई व्यवस्था बनाए रखें",
+    "Improve drainage": "जल निकासी में सुधार करें",
+    
+    "Ensure good air circulation": "हवा का अच्छा प्रवाह सुनिश्चित करें",
+    "Increase air circulation": "हवा का प्रवाह बढ़ाएं",
+    "Improve air circulation": "हवा के प्रवाह में सुधार करें",
+    
+    "Avoid wetting leaves": "पत्तियों को गीला करने से बचें",
+    "Avoid wet leaves": "पत्तियों को गीला न होने दें",
+    "Spray water on leaves": "पत्तियों पर पानी का छिड़काव करें",
+    "Reduce humidity": "नमी (Humidity) कम करें",
+    
+    "Maintain field hygiene": "खेत में स्वच्छता बनाए रखें",
+    "Keep field clean": "खेत को साफ रखें",
+    "Practice crop rotation": "फसल चक्र (Crop rotation) अपनाएं",
+    
+    "Ensure balanced nutrition": "संतुलित पोषण सुनिश्चित करें",
+    "Use certified seeds": "प्रमाणित बीजों का उपयोग करें",
+    "Use resistant varieties": "रोग प्रतिरोधी किस्मों का उपयोग करें",
+    
+    "Control insect vectors": "रोग फैलाने वाले कीड़ों को नियंत्रित करें",
+    "Control whiteflies": "सफेद मक्खियों (Whiteflies) को नियंत्रित करें",
+    
+    "Reduce plant stress": "पौधे का तनाव कम करें",
+    "Avoid excessive heat conditions": "अत्यधिक गर्मी की स्थिति से बचें",
+
+    "Sensor data not available": "सेंसर डेटा उपलब्ध नहीं है",
+    "Favorable conditions for Late Blight": "पछेती झुलसा (Late Blight) के लिए अनुकूल परिस्थितियाँ",
+    "Possible Early Blight risk": "अगेती झुलसा (Early Blight) का संभावित जोखिम",
+    "Conditions favorable for Leaf Mold": "लीफ मोल्ड (Leaf Mold) के लिए अनुकूल परिस्थितियाँ",
+    "Possible Spider Mites risk": "स्पाइडर माइट्स (Spider Mites) का संभावित जोखिम",
+    "No major disease-favorable conditions detected": "रोग के अनुकूल कोई प्रमुख परिस्थिति नहीं पाई गई",
+    
+    "Mango_Anthracnose": "एन्थ्रेक्नोज (Anthracnose)",
+    "Mango_Bacterial_Canker": "बैक्टीरियल कैंकर (Bacterial Canker)",
+    "Mango_Cutting_Weevil": "कटिंग वीविल (Cutting Weevil)",
+    "Mango_Die_Back": "डाई बैक (Die Back)",
+    "Mango_Gall_Midge": "गॉल मिज (Gall Midge)",
+    "Mango_Healthy": "स्वस्थ आम की पत्ती",
+    "Mango_Powdery_Mildew": "पाउडरी मिल्ड्यू (भभूतिया रोग)",
+    "Mango_Sooty_Mould": "सूटी मोल्ड (काली फफूंदी)"
   }
 }
