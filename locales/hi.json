@@ -17,6 +17,35 @@
     "Tomato": "टमाटर",
     "Mango": "आम",
 
+    "Crop is healthy": "फसल स्वस्थ है",
+    "Regular monitoring": "नियमित निगरानी करें",
+    "Monitor crop regularly": "फसल की नियमित निगरानी करें",
+    
+    "Remove infected leaves": "संक्रमित पत्तियों को हटा दें",
+    "Remove infected parts": "संक्रमित भागों को हटा दें",
+    "Remove affected shoots": "प्रभावित टहनियों (shoots) को हटा दें",
+    "Remove damaged parts": "क्षतिग्रस्त हिस्सों को हटा दें",
+    "Prune infected branches": "संक्रमित शाखाओं की छंटाई करें",
+    "Clean leaves": "पत्तियों को साफ करें",
+    
+    "Maintain spacing": "पौधों के बीच उचित दूरी बनाए रखें",
+    "Maintain hygiene": "स्वच्छता बनाए रखें",
+    "Maintain cleanliness": "साफ-सफाई बनाए रखें",
+    "Maintain orchard hygiene": "बगीचे में स्वच्छता बनाए रखें",
+    "Maintain plant health": "पौधों का स्वास्थ्य बनाए रखें",
+    
+    "Avoid overhead irrigation": "ऊपर से सिंचाई (Overhead irrigation) से बचें",
+    "Avoid high humidity": "अधिक नमी (High humidity) से बचें",
+    "Avoid waterlogging": "खेत में पानी जमा न होने दें (जलभराव से बचें)",
+    "Maintain irrigation": "सिंचाई व्यवस्था बनाए रखें",
+    
+    "Ensure air circulation": "हवा का प्रवाह सुनिश्चित करें",
+    "Improve air circulation": "हवा के प्रवाह में सुधार करें",
+    
+    "Ensure nutrition": "उचित पोषण (खाद) सुनिश्चित करें",
+    "Use healthy planting material": "रोपण के लिए स्वस्थ पौधों/सामग्री का उपयोग करें",
+    "Control insect infestation": "कीटों के प्रकोप को नियंत्रित करें"
+
     "Analysis_Result": "विश्लेषण परिणाम",
     "system_diagnosis_complete": "सिस्टम निदान पूरा हुआ",
     "Disease Detected": "पाया गया रोग:",
