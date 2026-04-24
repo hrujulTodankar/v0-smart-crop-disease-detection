@@ -17,6 +17,35 @@
     "Tomato": "टोमॅटो",
     "Mango": "आंबा",
 
+    "Crop is healthy": "पीक निरोगी आहे",
+    "Regular monitoring": "नियमित तपासणी करा",
+    "Monitor crop regularly": "पिकावर नियमित लक्ष ठेवा",
+    
+    "Remove infected leaves": "संक्रमित पाने काढून टाका",
+    "Remove infected parts": "संक्रमित भाग काढून टाका",
+    "Remove affected shoots": "रोगग्रस्त कोंब (shoots) काढून टाका",
+    "Remove damaged parts": "खराब झालेले भाग काढून टाका",
+    "Prune infected branches": "संक्रमित फांद्या छाटा",
+    "Clean leaves": "पाने स्वच्छ करा",
+    
+    "Maintain spacing": "रोपांमध्ये योग्य अंतर राखा",
+    "Maintain hygiene": "स्वच्छता राखा",
+    "Maintain cleanliness": "परिसर स्वच्छ ठेवा",
+    "Maintain orchard hygiene": "बागेत स्वच्छता राखा",
+    "Maintain plant health": "रोपांचे आरोग्य चांगले राखा",
+    
+    "Avoid overhead irrigation": "वरच्या बाजूने पाणी देणे (Overhead irrigation) टाळा",
+    "Avoid high humidity": "जास्त आर्द्रता (High humidity) टाळा",
+    "Avoid waterlogging": "शेतात पाणी साचू देऊ नका",
+    "Maintain irrigation": "सिंचन (पाणी) व्यवस्थापन राखा",
+    
+    "Ensure air circulation": "हवा खेळती राहील याची खात्री करा",
+    "Improve air circulation": "हवेचा प्रवाह सुधारा",
+    
+    "Ensure nutrition": "योग्य पोषण (खत) निश्चित करा",
+    "Use healthy planting material": "लागवडीसाठी निरोगी रोपांचा/कलमांचा वापर करा",
+    "Control insect infestation": "कीटकांच्या प्रादुर्भावावर नियंत्रण ठेवा"
+
     "Analysis_Result": "विश्लेषण परिणाम",
     "system_diagnosis_complete": "सिस्टम निदान पूर्ण",
     "Disease Detected": "आढळलेला रोग:",
