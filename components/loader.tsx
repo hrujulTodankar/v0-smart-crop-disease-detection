@@ -1,6 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import { useTranslation } from 'react-i18next';
 
 interface LoaderProps {
   size?: 'sm' | 'md' | 'lg';
@@ -9,6 +10,8 @@ interface LoaderProps {
 }
 
 export function Loader({ size = 'md', className, text }: LoaderProps) {
+  const { t } = useTranslation();
+  
   const sizeClasses = {
     sm: 'h-5 w-5',
     md: 'h-8 w-8',
@@ -33,13 +36,13 @@ export function Loader({ size = 'md', className, text }: LoaderProps) {
         />
       </div>
       {text && (
-        <p className="text-sm text-muted-foreground animate-pulse">{text}</p>
+        <p className="text-sm font-medium text-muted-foreground animate-pulse">{t(text)}</p>
       )}
     </div>
   );
 }
 
-export function FullPageLoader({ text = "Analyzing Your leaf..." }: { text?: string }) {
+export function FullPageLoader({ text = "analyzing" }: { text?: string }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm">
       <div className="glass-card rounded-3xl p-8 shadow-xl">
